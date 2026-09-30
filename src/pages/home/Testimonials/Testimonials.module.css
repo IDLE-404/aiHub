@@ -1,0 +1,170 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0;
+  background: #fff;
+  text-align: center;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 16px;
+  border: 1px solid var(--color-accent-border);
+  border-radius: 20px;
+  background: var(--color-cream);
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+  color: var(--color-accent);
+}
+
+.divider {
+  width: 1px;
+  height: 14px;
+  background: var(--color-accent-border);
+}
+
+.title {
+  margin-top: 20px;
+  padding: 0 16px;
+  font-family: var(--font-heading);
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  margin-top: 8px;
+  margin-bottom: 28px;
+  color: var(--color-text-muted);
+  font-size: 18px;
+}
+
+.marquee {
+  width: 100%;
+  margin-top: 20px;
+  padding: 8px 0;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+}
+
+.trackLeft {
+  display: flex;
+  width: max-content;
+  animation: scrollLeft 70s linear infinite;
+}
+
+.trackRight {
+  display: flex;
+  width: max-content;
+  animation: scrollRight 70s linear infinite;
+}
+
+.marquee:hover .trackLeft,
+.marquee:hover .trackRight {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.card {
+  width: 300px;
+  margin-right: 20px;
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  text-align: left;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.photo {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-accent-border), var(--color-sky));
+  color: #fff;
+  font-size: 20px;
+}
+
+.photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.audience {
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.quote {
+  margin-left: auto;
+  color: var(--color-accent-border);
+  font-size: 22px;
+}
+
+.text {
+  margin-top: 14px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 64px 0;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .card {
+    width: 260px;
+  }
+}
